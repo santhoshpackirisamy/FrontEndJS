@@ -1,0 +1,14 @@
+HR.push(new HumanResource(1,"Ram","kirshna","Male",20,123456789,"Chennai",100000,"HumanResource"));
+HR.push(new HumanResource(2,"kirshna","Ram","Male",29,123457789,"Chennai",200000,"HumanResource"));
+HR.push(new HumanResource(3,"Priya","kirshna","Femlale",20,345678921,"Chennai",400000,"HumanResource"));
+HR.push(new HumanResource(4,"Ram","priya","Male",20,233324894,"Chennai",10000,"HumanResource"));
+
+
+MLS.push(new MemberLeadershipStaff(5,"Ram","kirshna","Male",20,123456789,"Chennai",10000,"MemberLeadershipStaff"));
+MLS.push(new MemberLeadershipStaff(6,"kirshna","Ram","Male",29,123457789,"Chennai",20000,"MemberLeadershipStaff"));
+
+MTS.push(new MemberTechnicalStaff(7,"Priya","kirshna","Femlale",20,345678921,"Chennai",4000,"MemberTechnicalStaff"));
+MTS.push(new MemberTechnicalStaff(8,"Hari","priya","Male",20,233324894,"Chennai",1000,"MemberTechnicalStaff"));
+
+PT.push(new ProjectTrainee(9,"Ram","kirshna","Male",20,123456789,"Chennai",100,"ProjectTrainee"));
+PT.push(new ProjectTrainee(10,"kirshna","Ram","Male",29,123457789,"Chennai",200,"ProjectTrainee"));

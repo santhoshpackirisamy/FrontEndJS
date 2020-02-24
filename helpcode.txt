@@ -1,0 +1,4 @@
+HR.forEach(function (arrayItem) {
+        var x = arrayItem.salary;
+        console.log(x);
+    });
