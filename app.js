@@ -61,7 +61,7 @@ var PtDesignation = {designation : "ProjectTrainee"};
 document.getElementById("submit").addEventListener("click", function(){
     
 
-    
+    employeeID = (HR.length+MLS.length+MTS.length+PT.length)+1;
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('lname').value;
     var gender = document.getElementById('gender').value;
@@ -88,7 +88,6 @@ document.getElementById("submit").addEventListener("click", function(){
         PT.push(new ProjectTrainee(('000' + employeeID).substr(-3),firstName,lastName,gender,age,phoneNumber,address,salary,designation));
     }
     
-    employeeID++;
     
     Init();
 });
@@ -247,7 +246,7 @@ document.getElementById("bind").addEventListener("click", function(){
     var EmployeeFindRecord = findEmployeeDetailsByID(document.getElementById('bindEmployeeID').value);
     
     
-    var unboundGetX = function(firstName,lastName,gender,age,phoneNumber,address=this.address)
+    var unboundedEmployeeRecord = function(firstName,lastName,gender,age,phoneNumber,address=this.address)
     {
         if(firstName){this.firstName = firstName;}
         if(lastName){this.lastName = lastName;}
@@ -257,9 +256,9 @@ document.getElementById("bind").addEventListener("click", function(){
         
     };
     
-    const boundGetX = unboundGetX.bind(EmployeeFindRecord[0]);
+    const boundedEmployeeRecord = unboundedEmployeeRecord.bind(EmployeeFindRecord[0]);
     
-    boundGetX(firstName,lastName,gender,age,phoneNumber,address);
+    boundedEmployeeRecord(firstName,lastName,gender,age,phoneNumber,address);
     
     Init();
     
