@@ -122,7 +122,7 @@ document.getElementById("filter").addEventListener("click", function(){
 
 
 document.getElementById("find").addEventListener("click", function(){
-    var EmployeeFindRecord = findEmployeeDetailsByID(document.getElementById('findEmployeeID').value);   
+    var EmployeeFindRecord = callbackEmployeeDetailsByID(document.getElementById('findEmployeeID').value,findEmployeeDetailsByID);   
     
     console.log(EmployeeFindRecord);
 });
@@ -139,6 +139,23 @@ function findEmployeeDetailsByID(EmployeeFind)
     
     return EmployeeFindRecord;
 }
+
+function deleteEmployeeDetailsByID(EmployeeFind)
+{
+    var EmployeeFindRecord = true;
+    function arrayRemove(arr, value) {
+        return arr.filter(function(ele){
+            return ele.employee_ID != value;
+        });
+
+    }
+
+    HR = arrayRemove(HR, EmployeeFind);
+    MLS = arrayRemove(MLS, EmployeeFind);
+    MTS = arrayRemove(MTS, EmployeeFind);
+    PT = arrayRemove(PT, EmployeeFind);
+}
+
 
 document.getElementById("mapAndReduce").addEventListener("click", function(){
     
@@ -265,15 +282,60 @@ document.getElementById("bind").addEventListener("click", function(){
 });
 
 
+
+document.getElementById("closure").addEventListener("click", function(){
+    
+
+    for(var i=0;i<HR.length;i++)
+    {
+        ((i) => {
+            setTimeout(() => {
+            console.log(HR[i]);
+            },1000);
+        })(i);
+    }
+    
+    console.log("Closure started");
+    
+});
+
+
+
+document.getElementById("closure").addEventListener("click", function(){
+    
+
+    for(var i=0;i<HR.length;i++)
+    {
+        ((i) => {
+            setTimeout(() => {
+            console.log(HR[i]);
+            },1000);
+        })(i);
+    }
+    
+    console.log("Closure started");
+    
+});
+
+document.getElementById("callback").addEventListener("click", function(){
+
+    var EmployeeFindRecord = callbackEmployeeDetailsByID(document.getElementById('findEmployeeID').value,deleteEmployeeDetailsByID);   
+    
+    console.log(EmployeeFindRecord);
+    
+});
+
+
 //------------------function operation
 
+//Callback----------------------------
 
+function callbackEmployeeDetailsByID(callbackEmployeeID,callbackFunction)
+{
+        return callbackFunction(callbackEmployeeID);
+}
 
-
-
-
-
-
+//----------------------------Callback
 
 
 
